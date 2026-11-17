@@ -1,0 +1,41 @@
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        test = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"]
+
+        first = ""
+        second = ""
+
+        # new = len(s) - 1
+        
+        quit = 0
+        skip = 0
+        count = -1
+        while quit != 1:
+
+        
+            for i in range(0,len(s)):
+                if skip != i:
+                    if i.lower() in test:
+                        first = first + s[i].lower()
+            
+            for i in range(0,len(s)):
+                if skip != i:
+                    if s[count].lower() in test:
+                        second = second + s[count].lower()
+                count = count - 1
+
+            if first == second:
+                return True
+            
+            skip = skip + 1
+            first = ""
+            second = ""
+            count = -1
+            
+        return False
+
+
+            
+
+
+
